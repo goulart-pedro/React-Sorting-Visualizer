@@ -32,7 +32,6 @@ export const bubbleSort = (
 export const selectionSort = (inputArray: number[], animator: Function) => {
     for (let i = 0; i < inputArray.length; i++) {
         const minIdx = Utilities.findSmallestNumber(inputArray, i);
-        for(let)
         [inputArray[i], inputArray[minIdx]] = Utilities.swap(inputArray[i], inputArray[minIdx]);
 
         animator({ action: "comparison", items: [i, minIdx] });
