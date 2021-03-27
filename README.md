@@ -1,5 +1,4 @@
 # Visualizador de Algorítimos de Ordenação
-## Utilizando Typescript e React
-Criado por [Pedro Goulart](https://github.com/pedroBGoulart).
+Criado por [Pedro Goulart](https://github.com/pedroBGoulart) com Typescript e React
 
 
