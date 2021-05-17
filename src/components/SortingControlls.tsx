@@ -43,6 +43,20 @@ export function SortingControlls({
         }
     }
 
+    function handleArraySizeChange(e: React.KeyboardEvent<HTMLInputElement>) {
+        const value = parseInt(e.currentTarget.value);
+        if (value < 2 || value > 1000) return;
+        setArraySize(parseInt(e.currentTarget.value));
+        setArray(Utilities.makeArray(arraySize, 100));
+    }
+
+    function handleDelayTimeChange(setDelayTime: React.Dispatch<React.SetStateAction<number>>) {
+        return (e: React.KeyboardEvent<HTMLInputElement>) => {
+            const value = parseInt(e.currentTarget.value);
+            setDelayTime(value);
+        };
+    }
+
     return (
         <div className="sorting-controlls-wrapper">
             <div className="sorting-controlls">
@@ -61,12 +75,7 @@ export function SortingControlls({
                             className="input-box"
                             type="text"
                             placeholder={arraySize.toString()}
-                            onInput={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                                const value = parseInt(e.currentTarget.value);
-                                if (value < 2 || value > 1000) return;
-                                setArraySize(parseInt(e.currentTarget.value));
-                                setArray(Utilities.makeArray(arraySize, 100));
-                            }}
+                            onInput={(event: React.KeyboardEvent<HTMLInputElement>) => handleArraySizeChange(event)}
                         />
                     </DropdownOption>
 
@@ -76,10 +85,7 @@ export function SortingControlls({
                             className="input-box"
                             type="text"
                             placeholder={delayTime.toString()}
-                            onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                                const value = parseInt(e.currentTarget.value);
-                                setDelayTime(value);
-                            }}
+                            onKeyUp={handleDelayTimeChange(setDelayTime)}
                         />
                     </DropdownOption>
                 </Dropdown>
