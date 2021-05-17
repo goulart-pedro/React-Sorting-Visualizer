@@ -45,7 +45,9 @@ export function SortingControlls({
 
     function handleArraySizeChange(e: React.KeyboardEvent<HTMLInputElement>) {
         const value = parseInt(e.currentTarget.value);
-        if (value < 2 || value > 1000) return;
+        const isValueWithinBounds = value < 2 || value > 1000;
+        if (isValueWithinBounds) 
+            return;
         setArraySize(parseInt(e.currentTarget.value));
         setArray(Utilities.makeArray(arraySize, 100));
     }
