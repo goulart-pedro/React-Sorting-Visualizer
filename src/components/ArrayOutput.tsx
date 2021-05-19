@@ -1,10 +1,19 @@
 import React from "react";
-export function ArrayOutput({ array }: { array: number[] }) {
-    function mapElementArray(array:number[]) {
-        return array.map((element: number, index: number) => (
-                <div key={index} style={{ height: `${element}% ` }} className="array-bar"></div>
+
+interface OutputProps {
+    array:number[]
+}
+
+
+function ArrayElement(index: number, height: number) {
+    <div key={index} style={{ height: `${height}% ` }} className="array-bar"></div>;
+}
+
+export function ArrayOutput({ array }: OutputProps) {
+
+    const mapElementArray = (array:number[]) => array.map((element: number, index: number) => (
+               ArrayElement(index, element) 
             ))
-    }
 
     return (
         <div className="array-output">
