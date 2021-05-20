@@ -1,4 +1,9 @@
-export const ArrowDropDown = () => (
+import { ReactElement, ReactSVG, ReactSVGElement } from "react";
+
+type Icon = () => ReactElement 
+
+
+export const ArrowDropDown:Icon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -10,7 +15,7 @@ export const ArrowDropDown = () => (
     </svg>
 );
 
-export const PlayArrow = () => (
+export const PlayArrow:Icon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -22,7 +27,7 @@ export const PlayArrow = () => (
     </svg>
 );
 
-export const ShuffleIcon = () => (
+export const ShuffleIcon:Icon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"

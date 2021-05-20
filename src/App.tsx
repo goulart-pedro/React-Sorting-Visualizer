@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactPropTypes, useState } from "react";
 import "./App.css";
 import { ArrayOutput } from "./components/ArrayOutput";
 import { makeArray } from "./utils/utilFunctions";
@@ -13,13 +13,15 @@ type AppState = {
 
 class App extends React.Component<AppProps, AppState> {
   state: AppState;
+  defaultArrSize: number;
 
-  constructor(props: any) {
+  constructor(props: AppProps) {
     super(props);
+    this.defaultArrSize = 50
 
     this.state = {
-      numberArraySize: 50,
-      numberArray: makeArray(50, 100),
+      numberArraySize: this.defaultArrSize,
+      numberArray: makeArray(this.defaultArrSize, 100),
     };
   }
 

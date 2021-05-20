@@ -51,6 +51,7 @@ body {
     padding: 0.8rem 1rem;
     display: flex;
     background-color: var(--bg-color-secondary);
+    background: none;
     z-index: 999;
 }
 
